@@ -14,8 +14,10 @@
         <form class="upload-images p-0 border-0" id="new_post" enctype="multipart/form-data" action="{{ url('posts')}}" accept-charset="UTF-8" method="POST">
         {{csrf_field()}} 
           <div class="form-group row mt-2">
-            <div class="col-auto pr-0">
-              <img class="post-profile-icon round-img" src="{{ asset('storage/user_images/' . Auth::user()->id . '.jpg') }}"/>
+          <div class="col-auto pr-0">
+              @if (Auth::user()->image)
+                <img class="post-profile-icon round-img" src="data:image/png;base64,{{ Auth::user()->image }}"/>
+              @endif
             </div>
             <div class="col pl-0">
               <input class="form-control border-0" placeholder="キャプションを書く" type="text" name="caption" value="{{ old('list_name') }}"/>
