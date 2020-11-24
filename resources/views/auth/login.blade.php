@@ -21,9 +21,13 @@
             <div class="actions">
             <input type="submit" name="commit" value="サインインする" class="btn btn-primary w-100">
             </div>
+            <br>
+            <button type="submit" class="btn btn-primary w-100">
+                <a style="color:white;  text-decoration: none;" href="/login/guest">Guest Login</a>
+            </button>
+            
         </form>
-
-        <br>
+        
 
         <p class="devise-link">
             アカウントをお持ちでないですか？
