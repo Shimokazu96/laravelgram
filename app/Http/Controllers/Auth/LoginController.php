@@ -46,7 +46,7 @@ class LoginController extends Controller
 
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             return redirect('/');
-    }
+        }
 
     return back();
     }
