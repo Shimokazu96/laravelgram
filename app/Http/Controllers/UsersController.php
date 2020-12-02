@@ -38,7 +38,7 @@ class UsersController extends Controller
         //バリデーションの結果がエラーの場合
         if ($validator->fails())
         {
-          return redirect()->back()->withErrors($validator->errors())->withInput();
+            return redirect()->back()->withErrors($validator->errors())->withInput();
         }
         
         $user = User::find($request->id);
@@ -55,10 +55,6 @@ class UsersController extends Controller
         }
 
         $user->save();
-
-        // if ($request->user_profile_photo !=null) {
-        //     $request->user_profile_photo->storeAs('public/user_images', $user->id . '.jpg');
-        // }
 
         return redirect('/users/'.$request->id);
     }
